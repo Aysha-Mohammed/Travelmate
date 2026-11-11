@@ -28,10 +28,10 @@ const destinations = [
   },
 ]
 
-function Home({ onNavigate, onSearch, onDestinationSelect }) {
+function Home({ onNavigate, onSearch, onDestinationSelect, user, onLogout }) {
   return (
     <div className="website">
-      <Navbar onNavigate={onNavigate} />
+      <Navbar onNavigate={onNavigate} user={user} onLogout={onLogout} />
 
       <main>
         <Hero onSearch={onSearch} />
