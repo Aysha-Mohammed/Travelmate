@@ -1,33 +1,34 @@
-
 import { useState } from 'react'
 import './App.css'
 
 import Home from './pages/Home'
 import Explore from './pages/Explore'
 import DestinationDetails from './pages/DestinationDetails'
+import Login from './pages/Login'
 
 function App() {
   const [page, setPage] = useState('home')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedDestination, setSelectedDestination] = useState(null)
+  const [user, setUser] = useState(null)
 
   function handleNavigate(nextPage) {
-  if (nextPage === 'about' || nextPage === 'destinations') {
-    setPage('home')
+    console.log("handleNavigate received:", nextPage);
+    if (nextPage === 'about' || nextPage === 'destinations') {
+      setPage('home')
 
-    setTimeout(() => {
-      document
-        .getElementById(nextPage)
-        ?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+      setTimeout(() => {
+        document
+          .getElementById(nextPage)
+          ?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
 
-    return
+      return
+    }
+
+    setPage(nextPage)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
-  setPage(nextPage)
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
 
   function handleSearch(query) {
     setSearchQuery(query)
@@ -41,6 +42,27 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  function handleLoginSuccess(userData) {
+    setUser(userData)
+    setPage('home')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function handleLogout() {
+    setUser(null)
+    setPage('home')
+  }
+
+  
+  if (page === 'login') {
+    return (
+      <Login
+        onNavigate={handleNavigate}
+        onLoginSuccess={handleLoginSuccess}
+      />
+    )
+  }
+
   if (page === 'explore') {
     return (
       <Explore
@@ -48,6 +70,8 @@ function App() {
         onSearch={handleSearch}
         onDestinationSelect={handleDestinationSelect}
         initialQuery={searchQuery}
+        user={user}
+        onLogout={handleLogout}
       />
     )
   }
@@ -57,6 +81,8 @@ function App() {
       <DestinationDetails
         destination={selectedDestination}
         onNavigate={handleNavigate}
+        user={user}
+        onLogout={handleLogout}
       />
     )
   }
@@ -66,9 +92,10 @@ function App() {
       onNavigate={handleNavigate}
       onSearch={handleSearch}
       onDestinationSelect={handleDestinationSelect}
+      user={user}
+      onLogout={handleLogout}
     />
   )
 }
 
 export default App
-
