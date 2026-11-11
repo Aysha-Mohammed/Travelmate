@@ -2,11 +2,11 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-function DestinationDetails({ destination, onNavigate }) {
+function DestinationDetails({ destination, onNavigate, user, onLogout }) {
   if (!destination) {
     return (
       <div className="website">
-        <Navbar onNavigate={onNavigate} />
+        <Navbar onNavigate={onNavigate} user={user} onLogout={onLogout} />
         <main className="explore-page">
           <h1>No destination selected</h1>
           <button
