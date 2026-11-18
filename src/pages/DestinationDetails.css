@@ -1,0 +1,367 @@
+
+/* =================================
+   DESTINATION DETAILS PAGE
+================================= */
+
+.magazine-page {
+  background: #fbf8f1;
+  color: #263b32;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Navigation */
+
+.magazine-page .magazine-nav {
+  min-height: 75px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #e6e0d5;
+}
+
+.magazine-page .magazine-logo {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.magazine-page .magazine-edition {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.magazine-page .back-button {
+  border: 0;
+  background: transparent;
+  color: #315b48;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Cover Image */
+
+.magazine-page .magazine-cover {
+  height: 570px;
+  position: relative;
+  overflow: hidden;
+  background: #555;
+}
+
+.magazine-page .magazine-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.magazine-page .cover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.12),
+    rgba(0, 0, 0, 0.62)
+  );
+}
+
+.magazine-page .cover-overlay p,
+.magazine-page .cover-overlay span {
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.magazine-page .cover-overlay h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(65px, 12vw, 135px);
+  letter-spacing: 8px;
+  margin: 15px 0;
+}
+
+.magazine-page .cover-overlay h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(21px, 3vw, 35px);
+  font-weight: normal;
+  font-style: italic;
+  margin: 0 0 25px;
+}
+
+/* Introduction */
+
+.magazine-page .magazine-intro {
+  max-width: 850px;
+  margin: auto;
+  padding: 100px 25px 85px;
+  text-align: center;
+}
+
+/* Section Headings */
+
+.magazine-page .section-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  gap: 10px;
+}
+
+.magazine-page .section-heading > span {
+  display: block !important;
+  width: auto;
+  color: #263b32;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.magazine-page .section-heading h2 {
+  display: block !important;
+  width: 100%;
+  color: #263b32;
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: normal;
+  margin: 0;
+}
+
+.magazine-page .section-heading p {
+  display: none;
+}
+
+.magazine-page .magazine-intro h2,
+.magazine-page .section-heading h2,
+.magazine-page .lifestyle-column h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 18px 0;
+}
+
+.magazine-page .magazine-intro > p:not(.eyebrow) {
+  color: #72776e;
+  line-height: 1.9;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Best Time to Visit */
+
+.magazine-page .best-time {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 35px auto 0;
+  padding: 20px;
+  max-width: 400px;
+  border-top: 1px solid #d9d1c3;
+  border-bottom: 1px solid #d9d1c3;
+}
+
+.magazine-page .best-time span {
+  color: #a47e4f;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.magazine-page .best-time strong {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: normal;
+}
+
+/* Destination Places */
+
+.magazine-page .magazine-section,
+.magazine-page .occasion-section,
+.magazine-page .experience-section {
+  padding: 75px 7%;
+}
+
+.magazine-page .section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px;
+}
+
+.magazine-page .section-heading p {
+  color: #777b73;
+  line-height: 1.8;
+}
+
+.magazine-page .magazine-places {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px 35px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.magazine-page .place-story img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.magazine-page .place-caption {
+  padding: 20px 5px;
+}
+
+.magazine-page .place-caption span {
+  color: #a47e4f;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.magazine-page .place-caption h3,
+.magazine-page .occasion-card h3 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.magazine-page .place-caption p,
+.magazine-page .occasion-card p {
+  color: #777b73;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Occasions and Festivals */
+
+.magazine-page .occasion-section {
+  background: #eeeee5;
+}
+
+.magazine-page .occasion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.magazine-page .occasion-card {
+  padding: 30px;
+  background: #fbf8f1;
+  border: 1px solid #e4dfd4;
+}
+
+.magazine-page .occasion-card > span {
+  color: #a47e4f;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Experiences */
+
+.magazine-page .experience-list {
+  max-width: 750px;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.magazine-page .experience-list li {
+  padding: 19px 5px;
+  border-bottom: 1px solid #ddd7cb;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.magazine-page .experience-list li::before {
+  content: "✦";
+  color: #a47e4f;
+  margin-right: 15px;
+}
+
+/* Shopping and Food */
+
+.magazine-page .lifestyle-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 85px 10%;
+  background: #e8e9df;
+}
+
+.magazine-page .lifestyle-column h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.magazine-page .lifestyle-item {
+  padding: 13px 0;
+  border-bottom: 1px solid #cdd0c5;
+  color: #59665c;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+
+@media (max-width: 700px) {
+
+  .magazine-page .magazine-nav {
+    padding: 15px 4%;
+  }
+
+  .magazine-page .magazine-logo {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .magazine-page .magazine-edition {
+    display: none;
+  }
+
+  .magazine-page .magazine-cover {
+    height: 430px;
+  }
+
+  .magazine-page .cover-overlay h1 {
+    letter-spacing: 3px;
+  }
+
+  .magazine-page .magazine-intro {
+    padding: 65px 22px;
+  }
+
+  .magazine-page .magazine-section,
+  .magazine-page .occasion-section,
+  .magazine-page .experience-section {
+    padding: 55px 6%;
+  }
+
+  .magazine-page .magazine-places,
+  .magazine-page .occasion-grid,
+  .magazine-page .lifestyle-section {
+    grid-template-columns: 1fr;
+  }
+
+  .magazine-page .magazine-places {
+    gap: 25px;
+  }
+
+  .magazine-page .place-story img {
+    height: 250px;
+  }
+
+  .magazine-page .lifestyle-section {
+    padding: 55px 7%;
+    gap: 30px;
+  }
+}
