@@ -58,6 +58,7 @@ function Navbar({ onNavigate, user, onLogout }) {
             className="nav-button"
             onClick={(event) => {
               event.preventDefault()
+              console.log("Sign In button clicked!")
               onNavigate('login')
             }}
           >
