@@ -13,6 +13,12 @@ TravelMate is a travel discovery website built with React and Vite. Search for a
   - things to do, shopping spots and local food
 - **Sign in / sign up**: the navbar greets you by name on every page, and you stay signed in after a page refresh.
 
+## Live site
+
+https://aysha-mohammed.github.io/Travelmate/
+
+The site is rebuilt and published automatically by GitHub Actions every time `main` changes (see `.github/workflows/deploy.yml`).
+
 ## Getting started
 
 You need [Node.js](https://nodejs.org/) 20 or newer.
