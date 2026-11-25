@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 import Home from './pages/Home'
@@ -6,37 +6,14 @@ import Explore from './pages/Explore'
 import DestinationDetails from './pages/DestinationDetails'
 import Login from './pages/Login'
 
-const USER_STORAGE_KEY = 'travelmate-user'
-
-// Read the saved user (if any) so a page refresh keeps you signed in.
-function loadSavedUser() {
-  try {
-    const saved = localStorage.getItem(USER_STORAGE_KEY)
-    return saved ? JSON.parse(saved) : null
-  } catch {
-    return null
-  }
-}
-
 function App() {
   const [page, setPage] = useState('home')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedDestination, setSelectedDestination] = useState(null)
-  const [user, setUser] = useState(loadSavedUser)
-
-  useEffect(() => {
-    try {
-      if (user) {
-        localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user))
-      } else {
-        localStorage.removeItem(USER_STORAGE_KEY)
-      }
-    } catch {
-      // Storage can be unavailable (e.g. private browsing); the app still works.
-    }
-  }, [user])
+  const [user, setUser] = useState(null)
 
   function handleNavigate(nextPage) {
+    console.log("handleNavigate received:", nextPage);
     if (nextPage === 'about' || nextPage === 'destinations') {
       setPage('home')
 
@@ -76,6 +53,7 @@ function App() {
     setPage('home')
   }
 
+  
   if (page === 'login') {
     return (
       <Login
