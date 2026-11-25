@@ -11,7 +11,7 @@ function Login({ onNavigate, onLoginSuccess }) {
   function handleSubmit(event) {
     event.preventDefault()
     const userData = {
-      name: isSignUp ? name : email.split('@')[0],
+      name: isSignUp ? name.trim() : email.split('@')[0],
       email: email,
     }
     onLoginSuccess(userData)
@@ -70,6 +70,7 @@ function Login({ onNavigate, onLoginSuccess }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="At least 6 characters"
+                  minLength={6}
                   required
                 />
               </div>
@@ -113,4 +114,4 @@ function Login({ onNavigate, onLoginSuccess }) {
   )
 }
 
-export default Login
+export default Login
